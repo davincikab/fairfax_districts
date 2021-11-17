@@ -126,7 +126,7 @@ function createMarker(pin) {
     let markerElement = document.createElement("div");
     markerElement.className = "marker-element";
 
-    markerElement.innerHTML = `<img src="/icons/${pin.icon}" />`;
+    markerElement.innerHTML = `<img src="icons/${pin.icon}" />`;
     return new mapboxgl.Marker({element:markerElement})
             .setLngLat([...pin.location])
             
