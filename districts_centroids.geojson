@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "districts_centroids",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Annandale", "description": null }, "geometry": { "type": "Point", "coordinates": [ -77.183774648963563, 38.840649791530083 ] } },
+{ "type": "Feature", "properties": { "Name": "Chantilly", "description": null }, "geometry": { "type": "Point", "coordinates": [ -77.459553731416975, 38.855460412125495 ] } },
+{ "type": "Feature", "properties": { "Name": "Fairfax Center", "description": null }, "geometry": { "type": "Point", "coordinates": [ -77.354550761476077, 38.809231608337221 ] } },
+{ "type": "Feature", "properties": { "Name": "Herndon", "description": null }, "geometry": { "type": "Point", "coordinates": [ -77.398428789784333, 38.954194120878789 ] } },
+{ "type": "Feature", "properties": { "Name": "Merrifield", "description": null }, "geometry": { "type": "Point", "coordinates": [ -77.228469555157488, 38.86456604170121 ] } },
+{ "type": "Feature", "properties": { "Name": "Polygon 3", "description": null }, "geometry": { "type": "Point", "coordinates": [ -77.352340232851148, 38.949278561506588 ] } },
+{ "type": "Feature", "properties": { "Name": "Richmond Highway - Fort Belvoir", "description": null }, "geometry": { "type": "Point", "coordinates": [ -77.102928112103484, 38.741323173845281 ] } },
+{ "type": "Feature", "properties": { "Name": "Springfield - I95", "description": null }, "geometry": { "type": "Point", "coordinates": [ -77.220715321369624, 38.745341928761739 ] } },
+{ "type": "Feature", "properties": { "Name": "Polygon 2", "description": null }, "geometry": { "type": "Point", "coordinates": [ -77.257058735485757, 38.957576846601079 ] } }
+]
+}
