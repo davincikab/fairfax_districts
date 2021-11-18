@@ -20,6 +20,10 @@
             font-family: 'Roboto Condensed', sans-serif;
         }
 
+        .map-container {
+            position: relative;
+        }
+
         #map {
             height: 100vh;
             width: 100vw;
@@ -32,12 +36,149 @@
         .marker-element img {
             height: 28px;
         }
+
+        .nav-section {
+            display: flex;
+            position: absolute;
+            bottom: 10%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-section div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border:2px solid #025C8F;
+            background-color: #fff;
+            font-size: 20px;
+            margin: 0 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background-color: #025C8F;
+            color:white;
+        }
+
+        .btn svg path {
+            stroke:#025C8F;
+        }
+
+        .btn:hover svg path {
+            stroke:#fff;
+        }
+
+        #next-btn svg {
+            transform: rotate(-90deg) translateY(-5px);
+        }
+        #prev-btn svg {
+            transform: rotate(90deg) translateY(-5px);
+        }
+
+        .indicator-list {
+            display: inline-flex;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .indicator-item {
+            border:2px solid #025C8F;
+            background-color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            margin:0 0.25rem;
+            cursor: pointer;
+        }
+        
+
+        .indicator-item:hover, .indicator-item.active {
+            background-color: #025C8F;
+            color:#fff;
+        }
+
+        .side-section {
+            position: absolute;
+            right: 1%;
+            top:5%;
+            padding: 2rem;
+            width: 300px;
+            height: auto;
+            background-color: #fff;
+            box-shadow: 0px 0px 0.3em #ddd;
+            z-index: 2;
+        }
+
+        .aside-header .header-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color:#025C8F;
+        }
+
+        .aside-body {
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
     <div class="map-container">
         <div id="map"></div>
 
+        <div class="side-section" id="aside-section">
+            <div class="aside-header">
+                <span class="header-title">Annandale</span>
+            </div>
+            <div class="aside-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis pharetra enim. Aliquam non ante vel urna placerat dictum. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus odio sit amet sem mattis, eget ultricies ante maximus.
+                Vivamus pharetra, massa at dapibus ultricies, odio justo tempus nunc, ut commodo elit nulla in eros.
+            </div>
+            <div class="aside-footer">
+
+            </div>
+        </div>
+
+        <div class="nav-section">
+            <div>
+                <button class="btn btn-outline" id="prev-btn">
+                    <svg viewBox="0 0 22.013 22.013">
+                        <title>Carousel Arrow Previous</title> 
+                        <path d="M.707 10.299l10.3 10.3 10.299-10.3" fill="none" stroke-width="2" class="stroke-current"></path>
+                    </svg>
+                </button>
+    
+                <div class="item-index">
+                    <ul class="indicator-list">
+                        <li class="indicator-item active" data-target="Annandale"></li>
+                        <li class="indicator-item" data-target="Chantilly"></li>
+                        <li class="indicator-item" data-target="Fairfax Center"></li>
+                        <li class="indicator-item" data-target="Herndon"></li>
+                        <li class="indicator-item" data-target="Merrifield"></li>
+                        <li class="indicator-item" data-target="Reston"></li>
+                        <li class="indicator-item" data-target="Richmond Highway - Fort Belvoir"></li>
+                        <li class="indicator-item" data-target="Springfield - I95"></li>
+                        <li class="indicator-item" data-target="Tysons, Mclean, Vienna, Great Falls"></li>
+                    </ul>
+                </div>
+    
+                <button class="btn btn-outline" id="next-btn">
+                    <svg viewBox="0 0 22.013 22.013">
+                        <title>Carousel Arrow Next</title> 
+                        <path d="M.707 10.299l10.3 10.3 10.299-10.3" fill="none" stroke-width="2" class="stroke-current"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
         <!-- <img src="map.PNG" alt=""> -->
     </div>
 
