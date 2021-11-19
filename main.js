@@ -234,6 +234,7 @@ map.on("load", function(e) {
         console.log(e);
 
         if(e.features.length > 0) {
+           
             let feature = e.features[0];
 
             // update the side section
@@ -241,10 +242,16 @@ map.on("load", function(e) {
 
             // update the btn-navs
             let id = feature.id;
-            currentIndex = id;
-            updateActiveNavSection(id);
+            
+            if(currentIndex === id) {
+                map.setFilter('districts-highlighted', ['in', 'fid', '']);
+            } else {
+                currentIndex = id;
+                updateActiveNavSection(id);
 
-            map.setFilter('districts-highlighted', ['in', 'fid', id]);
+                map.setFilter('districts-highlighted', ['in', 'fid', id]);
+            }
+            
         }
     });
 

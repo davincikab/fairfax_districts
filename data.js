@@ -6,7 +6,7 @@ var pins = [
     },
     {
         name:'Ronald Reagan Washington National Airpor',
-        location:[-77.0402315, 38.851242,],
+        location:[-77.0452315, 38.851242,],
         icon:'airport.png'
     },
     {
