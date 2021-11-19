@@ -1,7 +1,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGF1ZGk5NyIsImEiOiJjanJtY3B1bjYwZ3F2NGFvOXZ1a29iMmp6In0.9ZdvuGInodgDk7cv-KlujA';
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    style: 'mapbox://styles/daudi97/ckw6f8mku2b7t15p1d1sd4y93', // style URL
     center: [-77.16294732788364, 38.83166857095776], // starting position [lng, lat]
     zoom: 9.5 // starting zoom
 });
@@ -102,7 +102,7 @@ map.on("load", function(e) {
         'source': 'districts',
         'paint': {
             'fill-outline-color': '#484896',
-            'fill-color': '#6e599f',
+            'fill-color': '#025C8F',
             'fill-opacity': 0.75
         },
         'filter': ['in', 'fid', '']
@@ -161,7 +161,13 @@ map.on("load", function(e) {
             "text-halo-width":1
         },
         layout:{
-            "text-font":["Roboto Condensed Bold", "Arial Unicode MS Regular"],
+            "text-font":[
+                'match',
+                ['get', 'type'],
+                "text-small",
+                ["literal", ["Roboto Condensed Regular"]],
+                ["literal", ["Roboto Condensed Bold"]]
+            ],
             "text-field":["get", "Name"],
             "text-size":["get", "fontSize"],
             "text-justify":"left",
@@ -169,6 +175,7 @@ map.on("load", function(e) {
             "text-max-width":["get", "max-width"],
             "text-transform":["get", "text-transform"],
             "text-allow-overlap":true,
+            "text-line-height":1,
             "text-anchor":["get", "text-anchor"],
         }
     });
@@ -219,7 +226,12 @@ map.on("load", function(e) {
         hoveredStateId = null;
     });
 
+    map.on("click", function(e) {
+        console.log(e);
+    });
+
     map.on("click", "district-layer", function(e) {
+        console.log(e);
 
         if(e.features.length > 0) {
             let feature = e.features[0];
@@ -268,7 +280,7 @@ function updateActiveNavSection(id) {
 }
 
 function updateSideSection(feature) {
-    console.log(feature);
+    // console.log(feature);
 
     let asideContent = ` <div class="aside-header">
         <span class="header-title">${feature.properties.Name}</span>
